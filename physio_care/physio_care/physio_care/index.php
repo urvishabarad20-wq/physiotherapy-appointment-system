@@ -11,7 +11,7 @@
     margin:0;
     padding:0;
 }
-
+    
 body{
     font-family: Arial, sans-serif;
     background: url('image/banner.jpg') no-repeat center center fixed;

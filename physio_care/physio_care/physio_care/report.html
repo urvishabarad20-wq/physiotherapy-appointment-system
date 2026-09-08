@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Physio Care Center – Project Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px 40px;
+            background: #fff;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: "Segoe UI Semibold", Arial, sans-serif;
+            color: #003b70;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #e0e7ff;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .mt-10 { margin-top: 10px; }
+        .mt-20 { margin-top: 20px; }
+        .mt-30 { margin-top: 30px; }
+
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .meta-table td {
+            padding: 8px 6px;
+            vertical-align: top;
+        }
+
+        .meta-label {
+            width: 32%;
+            font-weight: 600;
+        }
+
+        .toc {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .toc li {
+            margin-bottom: 5px;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: #003b70;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .box {
+            border-radius: 12px;
+            border: 1px solid #dde3f5;
+            background: linear-gradient(135deg, #f9fbff, #f2f7ff);
+            padding: 16px 18px;
+            margin-top: 10px;
+            margin-bottom: 12px;
+        }
+
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .sig-block {
+            width: 30%;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .sig-line {
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            padding-top: 4px;
+        }
+
+        ul {
+            margin-left: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* Simple diagram styles */
+        .diagram-section {
+            margin-top: 15px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            background: #f8fbff;
+            border: 1px dashed #b0c4ff;
+            font-size: 14px;
+        }
+
+        .sdlc-flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .sdlc-step {
+            flex: 1 1 120px;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 8px 10px;
+            text-align: center;
+            border: 1px solid #d4def9;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .arrow {
+            flex: 0 0 auto;
+            font-size: 18px;
+            color: #888;
+        }
+
+        .dfd-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .dfd-box {
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #dde3f5;
+            padding: 8px 10px;
+            text-align: center;
+        }
+
+        .activity-list {
+            counter-reset: act;
+            margin-top: 6px;
+        }
+
+        .activity-list li {
+            list-style: none;
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 6px;
+        }
+
+        .activity-list li::before {
+            counter-increment: act;
+            content: counter(act);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #003b70;
+            color: #fff;
+            font-size: 11px;
+            text-align: center;
+            line-height: 18px;
+        }
+
+        .timeline {
+            margin-top: 10px;
+            border-left: 2px solid #b3c3f5;
+            padding-left: 16px;
+        }
+
+        .timeline-item {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #003b70;
+        }
+
+        .timeline-year {
+            font-weight: 600;
+            color: #003b70;
+        }
+
+        /* Simple bar chart */
+        .chart {
+            margin-top: 12px;
+            padding: 10px 12px;
+            background: #f8fbff;
+            border-radius: 12px;
+            border: 1px solid #dde3f5;
+            font-size: 13px;
+        }
+
+        .chart-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .chart-label {
+            width: 160px;
+            font-size: 12px;
+        }
+
+        .chart-bar-wrap {
+            flex: 1;
+            background: #eef2ff;
+            border-radius: 999px;
+            overflow: hidden;
+            height: 12px;
+        }
+
+        .chart-bar {
+            height: 100%;
+            border-radius: 999px;
+        }
+
+        .chart-bar.frontend { width: 85%; background: #3b82f6; }
+        .chart-bar.backend  { width: 75%; background: #10b981; }
+        .chart-bar.database { width: 65%; background: #f97316; }
+
+        .small {
+            font-size: 13px;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- COVER DETAILS / METADATA -->
+    <h1>Physio Care Center</h1>
+    <p class="center small mt-10">
+        A Web-Based Physiotherapy Clinic Appointment and Service Management System
+    </p>
+
+    <table class="meta-table mt-20">
+        <tr>
+            <td class="meta-label">Student Name</td>
+            <td>: ________________________________</td>
+        </tr>
+        <tr>
+            <td class="meta-label">Enrollment / Roll No.</td>
+            <td>: ________________________________</td>
+        </tr>
+        <tr>
+            <td class="meta-label">Guided By (Mentor)</td>
+            <td>: ________________________________</td>
+        </tr>
+        <tr>
+            <td class="meta-label">Project Guide (If different)</td>
+            <td>: ________________________________</td>
+        </tr>
+        <tr>
+            <td class="meta-label">College / Institute</td>
+            <td>: ________________________________</td>
+        </tr>
+        <tr>
+            <td class="meta-label">Department</td>
+            <td>: ________________________________</td>
+        </tr>
+        <tr>
+            <td class="meta-label">Academic Year</td>
+            <td>: 2025 – 2026</td>
+        </tr>
+    </table>
+
+    <!-- TABLE OF CONTENTS -->
+    <h2 id="toc">Table of Contents</h2>
+    <ol class="toc">
+        <li><a href="#declaration">Declaration</a></li>
+        <li><a href="#acknowledgement">Acknowledgement</a></li>
+        <li><a href="#abstract">Abstract</a></li>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#problem-definition">Problem Definition</a></li>
+        <li><a href="#objectives">Objectives of the Study</a></li>
+        <li><a href="#system-analysis">System Analysis</a></li>
+        <li><a href="#system-design">System Design</a></li>
+        <li><a href="#implementation">Implementation</a></li>
+        <li><a href="#testing">Testing</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#future-scope">Future Scope</a></li>
+        <li><a href="#bibliography">Bibliography / References</a></li>
+    </ol>
+
+    <!-- DECLARATION -->
+    <h2 id="declaration">Declaration</h2>
+    <p>
+        I hereby declare that the project work entitled <strong>"Physio Care Center – Web-Based
+        Physiotherapy Clinic Management System"</strong> submitted in partial fulfillment of the
+        requirements for the award of the degree is the outcome of my own work, carried out under the
+        guidance of my project mentor. This work has not been submitted to any other University or
+        Institution for the award of any degree or diploma.
+    </p>
+
+    <div class="signature-row">
+        <div class="sig-block">
+            <div class="sig-line">Student Signature<br><span class="small">(Barad Urvisha Jagdishbhai)</span></div>
+        </div>
+        <div class="sig-block">
+            <div class="sig-line">Mentor Signature<br><span class="small">(Industry Mentor)</span></div>
+        </div>
+        <div class="sig-block">
+            <div class="sig-line">Guide Signature<br><span class="small">(Academic Guide)</span></div>
+        </div>
+    </div>
+
+    <!-- ACKNOWLEDGEMENT -->
+    <h2 id="acknowledgement">Acknowledgement</h2>
+    <p>
+        I would like to express my sincere gratitude to my project guide and mentor
+        <strong>________________________</strong> for his/her continuous support, motivation and
+        guidance throughout the development of this project. I am equally thankful to the Head of the
+        Department and all faculty members of <strong>________________________ College</strong> for
+        providing the necessary academic environment, laboratory facilities and valuable feedback.
+    </p>
+    <p>
+        I am also thankful to all my friends and family members for their encouragement and to the
+        physiotherapy professionals whose real-life practices inspired the design of this system.
+    </p>
+
+    <!-- ABSTRACT -->
+    <h2 id="abstract">Abstract</h2>
+    <p>
+        Physiotherapy clinics manage a large number of appointments, patient records and service
+        requests on a daily basis. Manual or semi-manual processes often lead to overbooking, time
+        conflicts, missing patient information and poor communication with patients. To address these
+        challenges, <strong>Physio Care Center</strong> is implemented as a web-based application
+        using PHP and MySQL, providing online appointment booking, service listing, contact
+        management and an administrator panel to manage appointments and clinic services.
+    </p>
+    <p>
+        The system allows patients to view clinic information, browse physiotherapy services, select
+        preferred dates and time slots, and submit appointment requests. The application enforces
+        business rules such as clinic timings, Sunday closure and a maximum of three bookings per
+        slot, thereby reducing scheduling conflicts. The admin module enables clinic staff to log in,
+        view and update appointments, manage available services and monitor contact enquiries. This
+        report describes the complete Software Development Life Cycle (SDLC) followed, system
+        analysis, design models, implementation details, testing strategies and future enhancements.
+    </p>
+
+    <!-- INTRODUCTION -->
+    <h2 id="introduction">Introduction</h2>
+    <p>
+        Healthcare and physiotherapy services are increasingly adopting digital solutions to improve
+        accessibility and patient experience. In urban areas, patients expect convenient online
+        access to information about doctors, services, clinic timings and appointment booking.
+        Traditional phone-based or walk-in appointment systems are prone to errors, miscommunication
+        and are difficult to track historically.
+    </p>
+    <p>
+        The <strong>Physio Care Center</strong> web application is designed as a complete front-end
+        and back-end solution for a physiotherapy clinic. The public module includes pages such as
+        <em>Home</em>, <em>About</em>, <em>Services</em>, <em>Book Appointment</em> and
+        <em>Contact</em>. The admin module allows authenticated staff to manage appointments and
+        services. The system is implemented using <strong>PHP</strong> on the server side, with a
+        <strong>MySQL</strong> database for data storage and modern responsive HTML/CSS layouts to
+        provide a professional look and feel.
+    </p>
+
+    <!-- PROBLEM DEFINITION -->
+    <h2 id="problem-definition">Problem Definition</h2>
+    <p>
+        The main problem addressed in this project is the lack of a structured, online appointment
+        and service management system for a physiotherapy clinic. Without a proper system:
+    </p>
+    <ul>
+        <li>Patients cannot easily know clinic timings, available services and the physiotherapist profile.</li>
+        <li>Appointments may be overbooked or booked on closed days such as Sunday.</li>
+        <li>There is no proper tracking of appointment history or patient enquiries.</li>
+        <li>Administrators have to manage appointments using paper or basic spreadsheets.</li>
+    </ul>
+    <p>
+        Therefore, there is a need for a web-based solution that automates appointment booking, enforces
+        clinic rules, manages services and provides a simple interface for both patients and clinic staff.
+    </p>
+
+    <!-- OBJECTIVES -->
+    <h2 id="objectives">Objectives of the Study</h2>
+    <ul>
+        <li>To design and develop a user-friendly web application for a physiotherapy clinic.</li>
+        <li>To provide online booking of appointments with time slot and date validation.</li>
+        <li>To allow dynamic management of physiotherapy services from the admin panel.</li>
+        <li>To provide a contact form for patients to send queries to the clinic.</li>
+        <li>To store and manage appointment data and contact messages using MySQL.</li>
+        <li>To follow a structured SDLC approach including analysis, design, implementation and testing.</li>
+    </ul>
+
+    <!-- SYSTEM ANALYSIS -->
+    <h2 id="system-analysis">System Analysis</h2>
+
+    <h3>Existing System</h3>
+    <p>
+        In a typical small physiotherapy clinic, appointment booking is performed manually via phone
+        calls, WhatsApp messages or walk-in registration. There is no centralized system to restrict
+        time slots, avoid overbooking, or maintain consistent patient records. Reporting and monthly
+        statistics must be prepared manually, which is time-consuming and error-prone.
+    </p>
+
+    <h3>Proposed System</h3>
+    <p>
+        The proposed <strong>Physio Care Center</strong> system is a centralized web application where:
+    </p>
+    <ul>
+        <li>Patients can book appointments online using the <code>appointment.php</code> page.</li>
+        <li>Available services are fetched dynamically from the <code>services</code> database table.</li>
+        <li>Booking rules are enforced so that only valid days (non-Sundays) and available time slots are accepted.</li>
+        <li>Contact messages are stored using prepared statements to prevent SQL injection.</li>
+        <li>Admin users can manage appointments and services from the admin dashboard.</li>
+    </ul>
+
+    <div class="diagram-section">
+        <h3>SDLC Model Used</h3>
+        <p class="small">
+            The development of this project followed a simplified <strong>Waterfall SDLC</strong> model
+            with clearly defined stages.
+        </p>
+        <div class="sdlc-flow">
+            <div class="sdlc-step">1. Requirement<br>Analysis</div>
+            <div class="arrow">➜</div>
+            <div class="sdlc-step">2. System<br>Design</div>
+            <div class="arrow">➜</div>
+            <div class="sdlc-step">3. Implementation</div>
+            <div class="arrow">➜</div>
+            <div class="sdlc-step">4. Testing</div>
+            <div class="arrow">➜</div>
+            <div class="sdlc-step">5. Deployment &<br>Maintenance</div>
+        </div>
+    </div>
+
+    <h3>Feasibility Study</h3>
+    <ul>
+        <li><strong>Technical Feasibility</strong>: Uses widely available technologies – PHP, MySQL, HTML, CSS and a simple WAMP stack.</li>
+        <li><strong>Economic Feasibility</strong>: Open-source tools reduce software cost; hosting costs are minimal.</li>
+        <li><strong>Operational Feasibility</strong>: Interfaces are simple; clinic staff can use the system with minimal training.</li>
+    </ul>
+
+    <!-- SYSTEM DESIGN -->
+    <h2 id="system-design">System Design</h2>
+
+    <h3>Context Level DFD (Zero Level)</h3>
+    <div class="diagram-section">
+        <p class="small">
+            The context diagram shows the entire <strong>Physio Care Center</strong> system as a single
+            process interacting with external entities.
+        </p>
+        <div class="dfd-grid">
+            <div class="dfd-box">
+                <strong>Patient</strong><br>
+                - Sends appointment request<br>
+                - Receives confirmation
+            </div>
+            <div class="dfd-box">
+                <strong>Physio Care System</strong><br>
+                (Main Process)
+            </div>
+            <div class="dfd-box">
+                <strong>Admin / Staff</strong><br>
+                - Manages services<br>
+                - Manages appointments
+            </div>
+        </div>
+        <p class="small mt-10">
+            Internal data stores: <em>Appointments</em>, <em>Services</em>, <em>Contact Messages</em> tables in MySQL.
+        </p>
+    </div>
+
+    <h3>Level 1 DFD</h3>
+    <div class="diagram-section">
+        <ul class="small">
+            <li><strong>Process 1.0 – Appointment Management</strong>: Receives patient details and time slot, validates and stores in <em>appointments</em> table.</li>
+            <li><strong>Process 2.0 – Service Management</strong>: Admin adds/updates/deletes services; data stored in <em>services</em> table.</li>
+            <li><strong>Process 3.0 – Contact Management</strong>: Contact form submissions stored in <em>contact_messages</em> table.</li>
+            <li><strong>Process 4.0 – Authentication</strong>: Admin login, session management in admin panel.</li>
+        </ul>
+    </div>
+
+    <h3>Use Case Diagram (Textual Description)</h3>
+    <div class="diagram-section">
+        <p class="small"><strong>Actors:</strong> Patient, Admin.</p>
+        <ul class="small">
+            <li><strong>Patient</strong>:
+                <ul>
+                    <li>UC1: View clinic information (Home, About, Services).</li>
+                    <li>UC2: Book appointment (select service, date, time).</li>
+                    <li>UC3: Send enquiry via contact form.</li>
+                </ul>
+            </li>
+            <li><strong>Admin</strong>:
+                <ul>
+                    <li>UC4: Login to admin panel.</li>
+                    <li>UC5: View and update appointments.</li>
+                    <li>UC6: Manage services (CRUD operations).</li>
+                    <li>UC7: View contact messages.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <h3>Activity Diagram – Appointment Booking</h3>
+    <div class="diagram-section">
+        <ol class="activity-list small">
+            <li>Patient opens <em>Book Appointment</em> page.</li>
+            <li>System loads active services and available time slots.</li>
+            <li>Patient enters personal details and selects service, date and slot.</li>
+            <li>System checks that the date is not in the past and not Sunday.</li>
+            <li>System checks that the selected time slot has fewer than three bookings.</li>
+            <li>If validation fails, error message is shown and patient modifies input.</li>
+            <li>If validation passes, appointment is stored and success message is shown.</li>
+        </ol>
+    </div>
+
+    <h3>Timeline Chart – Project Phases</h3>
+    <div class="diagram-section">
+        <div class="timeline small">
+            <div class="timeline-item">
+                <div class="timeline-year">Week 1 – 2</div>
+                <div>Requirement gathering, problem definition and feasibility study.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">Week 3 – 4</div>
+                <div>System design, DFDs, use cases and database schema design.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">Week 5 – 7</div>
+                <div>Implementation of public modules (Home, About, Services, Appointment, Contact).</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">Week 8 – 9</div>
+                <div>Implementation of admin panel, validations and security checks.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">Week 10 – 11</div>
+                <div>Testing, bug fixing and documentation.</div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Graph – Relative Effort by Module</h3>
+    <div class="chart">
+        <div class="chart-row">
+            <div class="chart-label">Front-end UI (HTML/CSS)</div>
+            <div class="chart-bar-wrap">
+                <div class="chart-bar frontend"></div>
+            </div>
+        </div>
+        <div class="chart-row">
+            <div class="chart-label">Back-end Logic (PHP)</div>
+            <div class="chart-bar-wrap">
+                <div class="chart-bar backend"></div>
+            </div>
+        </div>
+        <div class="chart-row">
+            <div class="chart-label">Database Design (MySQL)</div>
+            <div class="chart-bar-wrap">
+                <div class="chart-bar database"></div>
+            </div>
+        </div>
+        <p class="small mt-10">
+            The chart represents an approximate distribution of development effort across main
+            components of the project.
+        </p>
+    </div>
+
+    <!-- IMPLEMENTATION -->
+    <h2 id="implementation">Implementation</h2>
+    <p>
+        The application is implemented using the <strong>PHP</strong> programming language with a
+        <strong>MySQL</strong> database, deployed on a WAMP server environment. Core public modules
+        include:
+    </p>
+    <ul>
+        <li><strong>index.php</strong>: Landing page with hero section, service highlights, doctor profile and testimonials.</li>
+        <li><strong>about.php</strong>: Describes the clinic, physiotherapist details, vision, mission and journey timeline.</li>
+        <li><strong>services.php</strong>: Fetches active services from the database and displays them in a responsive grid with detail view.</li>
+        <li><strong>appointment.php</strong>: Implements appointment booking with time-slot generation and validation.</li>
+        <li><strong>contact.php</strong>: Allows users to send messages stored in the <code>contact_messages</code> table using prepared statements.</li>
+    </ul>
+    <p>
+        The admin module (e.g. <code>admin/dashboard.php</code>, <code>admin/appointments.php</code>,
+        <code>admin/services.php</code>, <code>admin/edit_appointment.php</code>, etc.) is protected by
+        a login system defined in <code>admin/login.php</code> and shared initialization scripts such as
+        <code>admin/_init.php</code>. Admin users can view, update and delete appointments, manage the
+        list of services, and respond to enquiries.
+    </p>
+
+    <div class="box small">
+        <strong>Key Implementation Details:</strong>
+        <ul>
+            <li>Database connectivity and configuration handled via a central <code>config.php</code> file.</li>
+            <li>Dynamic service list and appointment time slots generated using PHP loops.</li>
+            <li>Appointment form enforces clinic timings (10:00–13:00, 14:00–20:00) and prevents Sunday bookings.</li>
+            <li>Each time slot is limited to three appointments by checking the <code>appointments</code> table.</li>
+            <li>Contact form uses prepared statements to avoid SQL injection vulnerabilities.</li>
+        </ul>
+    </div>
+
+    <!-- TESTING -->
+    <h2 id="testing">Testing</h2>
+    <p>
+        Different levels of testing were performed to ensure the correctness and reliability of the
+        system.
+    </p>
+
+    <h3>Unit Testing</h3>
+    <ul>
+        <li>Validation of appointment date (past date and Sunday restriction).</li>
+        <li>Slot availability logic (maximum three bookings per slot).</li>
+        <li>Form validation for required fields in appointment and contact forms.</li>
+    </ul>
+
+    <h3>Integration Testing</h3>
+    <ul>
+        <li>Interaction between <code>appointment.php</code> and the <code>appointments</code> table.</li>
+        <li>Integration of <code>services.php</code> with the <code>services</code> table for list and detail view.</li>
+        <li>Admin update of appointments via <code>admin/edit_appointment.php</code> reflected correctly on the public side.</li>
+    </ul>
+
+    <h3>User Interface Testing</h3>
+    <ul>
+        <li>Responsive layout on desktop and mobile resolutions.</li>
+        <li>Navigation between Home, About, Services, Appointment and Contact pages.</li>
+        <li>Display of success and error messages in a user-friendly manner.</li>
+    </ul>
+
+    <!-- CONCLUSION -->
+    <h2 id="conclusion">Conclusion</h2>
+    <p>
+        The <strong>Physio Care Center</strong> project successfully demonstrates the design and
+        implementation of a web-based appointment and service management system for a physiotherapy
+        clinic. By automating appointment booking, enforcing time-slot rules and providing an admin
+        panel for clinic staff, the system reduces manual effort and minimizes scheduling errors. The
+        project also showcases practical usage of PHP, MySQL, HTML and CSS in a real-world healthcare
+        context.
+    </p>
+    <p>
+        Overall, the system meets the defined objectives and can be deployed with minor configuration
+        changes for use by small and medium physiotherapy centers.
+    </p>
+
+    <!-- FUTURE SCOPE -->
+    <h2 id="future-scope">Future Scope</h2>
+    <ul>
+        <li>Adding user registration and login for patients to view their appointment history.</li>
+        <li>Integrating SMS / email notifications for appointment confirmation and reminders.</li>
+        <li>Implementing role-based access control for multiple clinic staff accounts.</li>
+        <li>Adding online payment integration for advance appointment booking.</li>
+        <li>Providing analytics dashboards for monthly appointments and revenue statistics.</li>
+        <li>Developing a mobile application interface using the same back-end APIs.</li>
+    </ul>
+
+    <!-- BIBLIOGRAPHY -->
+    <h2 id="bibliography">Bibliography / References</h2>
+    <ul>
+        <li>PHP Manual – <a href="https://www.php.net" target="_blank">https://www.php.net</a></li>
+        <li>MySQL Documentation – <a href="https://dev.mysql.com/doc/" target="_blank">https://dev.mysql.com/doc/</a></li>
+        <li>W3Schools HTML/CSS Tutorials – <a href="https://www.w3schools.com" target="_blank">https://www.w3schools.com</a></li>
+        <li>MDN Web Docs – <a href="https://developer.mozilla.org" target="_blank">https://developer.mozilla.org</a></li>
+        <li>General articles and blogs on physiotherapy clinic management systems.</li>
+    </ul>
+
+    <p class="center small mt-30">
+        --- End of Report ---
+    </p>
+
+</div>
+</body>
+</html>
+

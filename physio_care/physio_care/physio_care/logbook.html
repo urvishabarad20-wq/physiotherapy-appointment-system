@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Internship Log Book – PHYSIO CARE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.5;
+        }
+
+        .page {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 30px 35px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        h1, h2, h3 {
+            font-family: "Segoe UI Semibold", Arial, sans-serif;
+            color: #003b70;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            font-size: 26px;
+        }
+
+        h2 {
+            margin-top: 25px;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #e1e7ff;
+            padding-bottom: 4px;
+            font-size: 20px;
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        .info-table td {
+            padding: 6px 4px;
+            vertical-align: top;
+        }
+
+        .info-label {
+            width: 32%;
+            font-weight: 600;
+        }
+
+        .log-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .log-table th,
+        .log-table td {
+            border: 1px solid #d5ddf5;
+            padding: 6px 6px;
+            vertical-align: top;
+        }
+
+        .log-table th {
+            background: #eef2ff;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .log-table td:nth-child(1),
+        .log-table td:nth-child(2) {
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .small {
+            font-size: 12px;
+        }
+
+        .mt-20 { margin-top: 20px; }
+        .mt-30 { margin-top: 30px; }
+
+        .holiday-row {
+            background: #fafafa;
+            color: #777;
+            font-style: italic;
+        }
+
+        .holiday-row td:nth-child(1),
+        .holiday-row td:nth-child(5) {
+            text-align: center;
+        }
+
+        .totals-box {
+            margin-top: 14px;
+            padding: 10px 12px;
+            background: #fdf9f3;
+            border-radius: 10px;
+            border: 1px solid #f0e2c5;
+            font-size: 13px;
+        }
+
+        .summary-box {
+            margin-top: 14px;
+            padding: 10px 12px;
+            background: #f8fbff;
+            border-radius: 10px;
+            border: 1px solid #dde3f5;
+            font-size: 13px;
+        }
+
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 35px;
+        }
+
+        .sig-block {
+            width: 30%;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .sig-line {
+            border-top: 1px solid #333;
+            margin-top: 35px;
+            padding-top: 3px;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+            .page {
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>Internship Log Book</h1>
+    <div class="sub-title">Techmax Company – PHYSIO CARE Web Application (Internship Work Log)</div>
+
+    <table class="info-table">
+        <tr>
+            <td class="info-label">Student Name</td>
+            <td>: Barad Urvisha Jagdishbhai</td>
+        </tr>
+        <tr>
+            <td class="info-label">Enrollment No.</td>
+            <td>: 2351002UG03285</td>
+        </tr>
+        <tr>
+            <td class="info-label">Project Title</td>
+            <td>: PHYSIO CARE</td>
+        </tr>
+        <tr>
+            <td class="info-label">Organization Name</td>
+            <td>: Techmax Company</td>
+        </tr>
+        <tr>
+            <td class="info-label">Internship Duration</td>
+            <td>: 19-01-2026 to 05-03-2026</td>
+        </tr>
+        <tr>
+            <td class="info-label">Daily Hours</td>
+            <td>: 4 Hours per Day</td>
+        </tr>
+        <tr>
+            <td class="info-label">Mentor / Guide</td>
+            <td>: ________________________________</td>
+        </tr>
+    </table>
+
+    <h2>Daily Work Log</h2>
+    <table class="log-table">
+        <tr>
+            <th>Day</th>
+            <th>Date</th>
+            <th>Task / Activity Description</th>
+            <th>Learning Outcome</th>
+            <th>Mentor / Guide</th>
+        </tr>
+
+        <!-- DAILY ENTRIES EXACTLY AS PER COMPANY SCHEDULE -->
+        <tr>
+            <td>Day 1</td>
+            <td>19-01-2026</td>
+            <td>Internship orientation at Techmax Company and introduction of “PHYSIO CARE” project with discussion on clinic workflow.</td>
+            <td>Understanding overall project objective, scope and expectations.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 2</td>
+            <td>20-01-2026</td>
+            <td>PHP environment setup using XAMPP/WAMP and VS Code, creation of local project folder.</td>
+            <td>Hands-on experience in local server configuration and basic project setup.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 3</td>
+            <td>21-01-2026</td>
+            <td>Learning PHP syntax, variables, data types and simple PHP scripts.</td>
+            <td>Basic PHP programming knowledge and confidence in writing simple code.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 4</td>
+            <td>22-01-2026</td>
+            <td>Study and implementation of control structures in PHP (if, else, switch, loops).</td>
+            <td>Logic building and decision-making skills using PHP.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 5</td>
+            <td>23-01-2026</td>
+            <td>Creating HTML forms and handling GET/POST methods in PHP.</td>
+            <td>Form data processing and basic server-side validation.</td>
+            <td>Signature</td>
+        </tr>
+        <tr class="holiday-row">
+            <td>–</td>
+            <td>24-01-2026</td>
+            <td>SATURDAY – Weekly off as per company policy.</td>
+            <td>No working hours (holiday).</td>
+            <td>–</td>
+        </tr>
+        <tr class="holiday-row">
+            <td>–</td>
+            <td>25-01-2026</td>
+            <td>SUNDAY – Weekly off as per company policy.</td>
+            <td>No working hours (holiday).</td>
+            <td>–</td>
+        </tr>
+        <tr>
+            <td>Day 6</td>
+            <td>26-01-2026</td>
+            <td>Session and cookie management in PHP for tracking user activities.</td>
+            <td>Understanding user session handling and persistent user data.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 7</td>
+            <td>27-01-2026</td>
+            <td>Website layout planning for PHYSIO CARE (header, footer, content sections).</td>
+            <td>UI structure design and creation of clear page flow.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 8</td>
+            <td>28-01-2026</td>
+            <td>Creating Home page using HTML and CSS as per planned layout.</td>
+            <td>Frontend basics and styling for a physiotherapy clinic website.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 9</td>
+            <td>29-01-2026</td>
+            <td>Introduction to MySQL database and understanding tables, keys and relationships.</td>
+            <td>Database basics and importance of structured data storage.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 10</td>
+            <td>30-01-2026</td>
+            <td>Creating database and required tables for PHYSIO CARE project.</td>
+            <td>Data structure understanding and mapping clinic requirements to tables.</td>
+            <td>Signature</td>
+        </tr>
+        <tr class="holiday-row">
+            <td>–</td>
+            <td>31-01-2026</td>
+            <td>SATURDAY – Weekly off as per company policy.</td>
+            <td>No working hours (holiday).</td>
+            <td>–</td>
+        </tr>
+        <tr class="holiday-row">
+            <td>–</td>
+            <td>01-02-2026</td>
+            <td>SUNDAY – Weekly off as per company policy.</td>
+            <td>No working hours (holiday).</td>
+            <td>–</td>
+        </tr>
+        <tr>
+            <td>Day 11</td>
+            <td>02-02-2026</td>
+            <td>Connecting PHP with MySQL database using basic mysqli / PDO approach.</td>
+            <td>Database connectivity and execution of sample queries.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 12</td>
+            <td>03-02-2026</td>
+            <td>PDO database connection and performing CRUD (Create, Read, Update, Delete) operations.</td>
+            <td>Secure database access and data management using prepared statements.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 13</td>
+            <td>04-02-2026</td>
+            <td>Admin login system development with session-based authentication.</td>
+            <td>Understanding authentication system and protected admin area.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 14</td>
+            <td>05-02-2026</td>
+            <td>Advanced SQL queries and designing navigation menu and header for the website.</td>
+            <td>Query optimization and better website structure with common navigation.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 15</td>
+            <td>06-02-2026</td>
+            <td>Developing final Home page content with responsive layout.</td>
+            <td>Responsive UI design and content placement.</td>
+            <td>Signature</td>
+        </tr>
+        <tr class="holiday-row">
+            <td>–</td>
+            <td>07-02-2026</td>
+            <td>SATURDAY – Weekly off as per company policy.</td>
+            <td>No working hours (holiday).</td>
+            <td>–</td>
+        </tr>
+        <tr class="holiday-row">
+            <td>–</td>
+            <td>08-02-2026</td>
+            <td>SUNDAY – Weekly off as per company policy.</td>
+            <td>No working hours (holiday).</td>
+            <td>–</td>
+        </tr>
+        <tr>
+            <td>Day 16</td>
+            <td>09-02-2026</td>
+            <td>Services page development to show physiotherapy services of the clinic.</td>
+            <td>Service information display and structured service listing.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 17</td>
+            <td>10-02-2026</td>
+            <td>Adding therapist details section with profiles and expertise.</td>
+            <td>Dynamic content display and better presentation of therapist information.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 18</td>
+            <td>11-02-2026</td>
+            <td>Designing appointment booking form for patients.</td>
+            <td>Form design and capturing all required booking details.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 19</td>
+            <td>12-02-2026</td>
+            <td>Home service booking module and saving appointment data into database.</td>
+            <td>Feature implementation and database insertion logic.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 20</td>
+            <td>13-02-2026</td>
+            <td>AJAX booking submission and displaying appointment list in admin panel.</td>
+            <td>Asynchronous processing and data retrieval in admin side.</td>
+            <td>Signature</td>
+        </tr>
+        <tr class="holiday-row">
+            <td>–</td>
+            <td>14-02-2026</td>
+            <td>SATURDAY – Weekly off as per company policy.</td>
+            <td>No working hours (holiday).</td>
+            <td>–</td>
+        </tr>
+        <tr class="holiday-row">
+            <td>–</td>
+            <td>15-02-2026</td>
+            <td>SUNDAY – Weekly off as per company policy.</td>
+            <td>No working hours (holiday).</td>
+            <td>–</td>
+        </tr>
+        <tr>
+            <td>Day 21</td>
+            <td>16-02-2026</td>
+            <td>Editing and deleting appointment records from admin panel.</td>
+            <td>CRUD functionality and maintenance of appointment data.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 22</td>
+            <td>17-02-2026</td>
+            <td>Designing Contact Us page with form and clinic details.</td>
+            <td>User communication page and capturing user queries.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 23</td>
+            <td>18-02-2026</td>
+            <td>Error handling and debugging, adding validation in forms.</td>
+            <td>Troubleshooting skills and error prevention through proper validation.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 24</td>
+            <td>19-02-2026</td>
+            <td>Patient management dashboard and improving website layout and CSS.</td>
+            <td>Admin module development and overall UI enhancement.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 25</td>
+            <td>20-02-2026</td>
+            <td>Security best practices and creating patient management section.</td>
+            <td>Web security awareness and admin panel improvement.</td>
+            <td>Signature</td>
+        </tr>
+        <tr class="holiday-row">
+            <td>–</td>
+            <td>21-02-2026</td>
+            <td>SATURDAY – Weekly off as per company policy.</td>
+            <td>No working hours (holiday).</td>
+            <td>–</td>
+        </tr>
+        <tr class="holiday-row">
+            <td>–</td>
+            <td>22-02-2026</td>
+            <td>SUNDAY – Weekly off as per company policy.</td>
+            <td>No working hours (holiday).</td>
+            <td>–</td>
+        </tr>
+        <tr>
+            <td>Day 26</td>
+            <td>23-02-2026</td>
+            <td>Testing appointment booking module with sample data.</td>
+            <td>Feature testing and verification of booking flow.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 27</td>
+            <td>24-02-2026</td>
+            <td>User login and registration module development.</td>
+            <td>User authentication and account creation understanding.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 28</td>
+            <td>25-02-2026</td>
+            <td>Backend business logic implementation for different modules.</td>
+            <td>Backend development and separation of presentation and logic.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 29</td>
+            <td>26-02-2026</td>
+            <td>Testing appointment booking and enhancing overall frontend design.</td>
+            <td>Integration testing and better user experience.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 30</td>
+            <td>27-02-2026</td>
+            <td>Integrating all project modules and verifying complete flow.</td>
+            <td>System integration and end-to-end working of the project.</td>
+            <td>Signature</td>
+        </tr>
+        <tr class="holiday-row">
+            <td>–</td>
+            <td>28-02-2026</td>
+            <td>SATURDAY – Weekly off as per company policy.</td>
+            <td>No working hours (holiday).</td>
+            <td>–</td>
+        </tr>
+        <tr class="holiday-row">
+            <td>–</td>
+            <td>01-03-2026</td>
+            <td>SUNDAY – Weekly off as per company policy.</td>
+            <td>No working hours (holiday).</td>
+            <td>–</td>
+        </tr>
+        <tr>
+            <td>Day 31</td>
+            <td>02-03-2026</td>
+            <td>Final testing of PHYSIO CARE website.</td>
+            <td>Technical testing skills and overall quality assurance.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 32</td>
+            <td>03-03-2026</td>
+            <td>Preparing project documentation for submission.</td>
+            <td>Documentation skills and proper structuring of report.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 33</td>
+            <td>04-03-2026</td>
+            <td>Reviewing project with mentor and incorporating final suggestions.</td>
+            <td>Project evaluation and improvement based on feedback.</td>
+            <td>Signature</td>
+        </tr>
+        <tr>
+            <td>Day 34</td>
+            <td>05-03-2026</td>
+            <td>Final submission of PHYSIO CARE project and internship completion formalities.</td>
+            <td>Project completion and closing of internship activities.</td>
+            <td>Signature</td>
+        </tr>
+    </table>
+
+    <h2 class="mt-20">Internship Summary – Days & Hours</h2>
+    <div class="totals-box">
+        <strong>Total Internship Calendar Duration:</strong> 19-01-2026 to 05-03-2026 (46 days)<br>
+        <strong>Total Working Days (excluding Saturdays & Sundays):</strong> 34 days<br>
+        <strong>Daily Working Hours:</strong> 4 hours per day<br>
+        <strong>Total Working Hours Completed at Techmax Company:</strong> 34 × 4 = 136 hours<br>
+        <strong>Total Weekly Off / Holidays (Saturdays & Sundays):</strong> 12 days
+    </div>
+
+    <h2 class="mt-20">Overall Internship Summary</h2>
+    <div class="summary-box">
+        <strong>Project Title:</strong> PHYSIO CARE – Web-Based Physiotherapy Clinic Management System<br><br>
+        <strong>1. Project Description:</strong> During this internship at Techmax Company, the student designed and
+        developed a complete PHP–MySQL web application for a physiotherapy clinic. The work included requirement
+        analysis, gathering clinic requirements and planning modules such as Home, Services, Appointment, Patient
+        Management and Contact.<br><br>
+        <strong>2. Design &amp; User Interface:</strong> The student prepared page layouts, wireframes and responsive UI using
+        HTML, CSS and basic JavaScript. Special focus was given to a clean home page, clear navigation menu,
+        therapist details section, appointment booking form and mobile-friendly design so that patients can easily
+        understand and use the PHYSIO CARE website.<br><br>
+        <strong>3. Database &amp; Back-End:</strong> A structured MySQL database was designed for services, patients, appointments,
+        users and contact messages. Secure PHP–MySQL integration was implemented using PDO and prepared statements,
+        with modules for admin login, appointment management, patient management and user authentication. The
+        application was tested thoroughly, minor bugs were resolved and complete project documentation was prepared.
+        Overall, the internship provided practical exposure to full-stack web development and real-world healthcare
+        workflow automation.
+    </div>
+
+    <div class="signature-row mt-30">
+        <div class="sig-block">
+            <div class="sig-line">Student Signature<br><span class="small">(Barad Urvisha Jagdishbhai)</span></div>
+        </div>
+        <div class="sig-block">
+            <div class="sig-line">Mentor Signature<br><span class="small">(Techmax Company)</span></div>
+        </div>
+        <div class="sig-block">
+            <div class="sig-line">Guide Signature<br><span class="small">(College Guide)</span></div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+
